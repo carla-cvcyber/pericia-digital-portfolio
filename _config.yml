@@ -1,0 +1,54 @@
+title: "Portfólio de Perícia Digital"
+description: "Análise Forense de Assinaturas Digitais e Documentos Eletrônicos"
+baseurl: ""
+url: "https://pericia.cvcyber.dev" 
+
+# Configurações do site
+lang: pt-BR
+timezone: America/Sao_Paulo
+
+# Tema
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Informações do autor
+author:
+  name: "Carla Vieira"
+  bio: "Especialista em Perícia Digital e Assinaturas Eletrônicas"
+  location: "Brasília, DF"
+  email: "carla@cvcyber.dev"
+  linkedin: "https://www.linkedin.com/in/carlacovieira/"
+  github: "https://github.com/carla-cvcyber"
+
+# Navegação
+header_pages:
+  - casos-publicos.md
+  - metodologia.md
+  - templates.md
+  - ferramentas.md
+  - sobre.md
+
+# SEO
+keywords: 
+  - "perícia digital"
+  - "assinatura eletrônica"
+  - "ICP-Brasil"
+  - "validação de documentos"
+  - "análise forense"
+
+# Configurações de exibição
+show_excerpts: true
+paginate: 5
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
