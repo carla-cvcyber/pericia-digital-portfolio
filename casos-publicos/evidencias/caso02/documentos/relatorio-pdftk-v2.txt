@@ -1,0 +1,72 @@
+InfoBegin
+InfoKey: Title
+InfoValue: Proposta Comercial - Contrato de Serviços
+InfoBegin
+InfoKey: Subject
+InfoValue: Proposta para prestação de serviços de consultoria
+InfoBegin
+InfoKey: Keywords
+InfoValue: consultoria, proposta, comercial
+InfoBegin
+InfoKey: Creator
+InfoValue: Microsoft® Word para Microsoft 365
+InfoBegin
+InfoKey: Producer
+InfoValue: Microsoft® Word para Microsoft 365
+InfoBegin
+InfoKey: CreationDate
+InfoValue: D:20240415103022-03'00'
+InfoBegin
+InfoKey: ModDate
+InfoValue: D:20240418164533-03'00'
+InfoBegin
+InfoKey: Custom
+InfoValue: 
+PdfID0: f3e2a1b9c8d7e6f5a4b3c2d1e0f9e8d7
+PdfID1: a9b8c7d6e5f4a3b2c1d0e9f8e7d6c5b4
+NumberOfPages: 5
+PageMediaBegin
+PageMediaNumber: 1
+PageMediaRotation: 0
+PageMediaRect: 0 0 612 792
+PageMediaDimensions: 612 792
+PageMediaBegin
+PageMediaNumber: 2
+PageMediaRotation: 0
+PageMediaRect: 0 0 612 792
+PageMediaDimensions: 612 792
+PageMediaBegin
+PageMediaNumber: 3
+PageMediaRotation: 0
+PageMediaRect: 0 0 612 792
+PageMediaDimensions: 612 792
+PageMediaBegin
+PageMediaNumber: 4
+PageMediaRotation: 0
+PageMediaRect: 0 0 612 792
+PageMediaDimensions: 612 792
+PageMediaBegin
+PageMediaNumber: 5
+PageMediaRotation: 0
+PageMediaRect: 0 0 612 792
+PageMediaDimensions: 612 792
+BookmarkBegin
+BookmarkTitle: 1. Apresentação da Empresa
+BookmarkLevel: 1
+BookmarkPageNumber: 1
+BookmarkBegin
+BookmarkTitle: 2. Escopo dos Serviços
+BookmarkLevel: 1
+BookmarkPageNumber: 2
+BookmarkBegin
+BookmarkTitle: 3. Valores Comerciais
+BookmarkLevel: 1
+BookmarkPageNumber: 3
+BookmarkBegin
+BookmarkTitle: 4. Condições Contratuais
+BookmarkLevel: 1
+BookmarkPageNumber: 4
+BookmarkBegin
+BookmarkTitle: 5. Assinaturas
+BookmarkLevel: 1
+BookmarkPageNumber: 5
