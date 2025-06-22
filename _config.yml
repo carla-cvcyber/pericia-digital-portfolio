@@ -1,54 +1,69 @@
-title: "Portfólio de Perícia Digital"
-description: "Análise Forense de Assinaturas Digitais e Documentos Eletrônicos"
-baseurl: ""
-url: "https://pericia.cvcyber.dev" 
+# Configuração do Site Jekyll - Portfólio Perícia Digital
+title: "Portfólio Perícia Digital"
+description: "Portfólio profissional especializado em perícia digital, autenticidade de documentos e análise forense."
+author: Carla Vieira
+email: carla@cvcyber.dev
 
-# Configurações do site
-lang: pt-BR
-timezone: America/Sao_Paulo
+# URL do site 
+url: "https://pericia.cvcyber.dev"
+baseurl: "/pericia-digital-portfolio"
 
-# Tema
+# Configurações Jekyll
+markdown: kramdown
+highlighter: rouge
 theme: minima
 plugins:
-  - jekyll-feed
   - jekyll-sitemap
+  - jekyll-feed
   - jekyll-seo-tag
 
-# Informações do autor
-author:
-  name: "Carla Vieira"
-  bio: "Especialista em Perícia Digital e Assinaturas Eletrônicas"
-  location: "Brasília, DF"
-  email: "carla@cvcyber.dev"
-  linkedin: "https://www.linkedin.com/in/carlacovieira/"
-  github: "https://github.com/carla-cvcyber"
+# Configurações de coleções
+collections:
+  casos:
+    output: true
+    permalink: /:collection/:name/
 
-# Navegação
-header_pages:
-  - casos-publicos.md
-  - metodologia.md
-  - templates.md
-  - ferramentas.md
-  - sobre.md
+# Configurações padrão
+defaults:
+  - scope:
+      path: ""
+      type: "casos"
+    values:
+      layout: "caso"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
 
-# SEO
-keywords: 
-  - "perícia digital"
-  - "assinatura eletrônica"
-  - "ICP-Brasil"
-  - "validação de documentos"
-  - "análise forense"
+# Configurações de build
+safe: true
+incremental: false
+highlighter: rouge
+gist:
+  noscript: false
 
-# Configurações de exibição
-show_excerpts: true
-paginate: 5
+# Metadados profissionais
+professional:
+  name: Carla Vieira
+  title: "Perito em Forense Digital"
+  contact:
+    phone: "+55 (61) 991688071"
+    linkedin: www.linkedin.com/in/carlacovieira
+    location: Brasília, DF
 
-# Exclude from processing
+# Configurações de SEO
+social:
+  name: Carla Vieira
+  type: "Person"
+
+# Excluir do build
 exclude:
   - Gemfile
   - Gemfile.lock
   - node_modules
-  - vendor/
-  - .sass-cache/
-  - .jekyll-cache/
-  - gemfiles/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
