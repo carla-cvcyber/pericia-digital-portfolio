@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <a class="btn" href="/">🏠 Início</a>
+        <a class="btn" href="/metodologia">Metodologia</a>
+        <a class="btn" href="/casos-publicos/caso01-assinatura-icp-brasil">Caso 01</a>
+        <a class="btn" href="/casos-publicos/caso02-edicao-posterior">Caso 02</a>
+      </nav>
+
+      {{ content }}
+
+      <footer class="contact">
+        <h2>Contato</h2>
+        <div class="contact-info">
+          <div class="contact-item">📧 contato@cvcyber.dev</div>
+          <div class="contact-item">🔗 www.pericia.cvcyber.dev</div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
