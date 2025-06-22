@@ -1,0 +1,75 @@
+========================================
+COMPARAÇÃO EXIFTOOL - PROPOSTA V1 vs V2
+========================================
+
+=== ARQUIVO: proposta_comercial_v1.pdf ===
+ExifTool Version Number         : 12.76
+File Name                       : proposta_comercial_v1.pdf
+Directory                       : ./
+File Size                       : 1.8 MB
+File Modification Date/Time     : 2024:04:15 10:30:22-03:00
+File Access Date/Time           : 2024:04:22 09:15:33-03:00
+File Creation Date/Time         : 2024:04:15 10:30:22-03:00
+File Permissions                : -rw-r--r--
+File Type                       : PDF
+File Type Extension             : pdf
+MIME Type                       : application/pdf
+PDF Version                     : 1.7
+Linearized                      : No
+Page Count                      : 5
+Language                        : pt-BR
+Tagged PDF                      : Yes
+XMP Toolkit                     : Adobe XMP Core 7.0-c000 1.000000
+Creator Tool                    : Microsoft® Word para Microsoft 365
+Create Date                     : 2024:04:15 10:30:22-03:00
+Creator                         : Microsoft® Word para Microsoft 365
+Modify Date                     : 2024:04:15 10:30:22-03:00
+Producer                        : Microsoft® Word para Microsoft 365
+Title                          : Proposta Comercial - Contrato de Serviços
+Subject                        : Proposta para prestação de serviços de consultoria
+Author                         : João Silva Santos
+Keywords                       : consultoria, proposta, comercial
+Company                        : Tech Solutions Ltda
+
+=== ARQUIVO: proposta_comercial_v2.pdf ===
+ExifTool Version Number         : 12.76
+File Name                       : proposta_comercial_v2.pdf
+Directory                       : ./
+File Size                       : 1.9 MB
+File Modification Date/Time     : 2024:04:18 16:45:33-03:00
+File Access Date/Time           : 2024:04:22 09:15:45-03:00
+File Creation Date/Time         : 2024:04:15 10:30:22-03:00
+File Permissions                : -rw-r--r--
+File Type                       : PDF
+File Type Extension             : pdf
+MIME Type                       : application/pdf
+PDF Version                     : 1.7
+Linearized                      : No
+Page Count                      : 5
+Language                        : pt-BR
+Tagged PDF                      : Yes
+XMP Toolkit                     : Adobe XMP Core 7.0-c000 1.000000
+Creator Tool                    : Microsoft® Word para Microsoft 365
+Create Date                     : 2024:04:15 10:30:22-03:00
+Creator                         : Microsoft® Word para Microsoft 365
+Modify Date                     : 2024:04:18 16:45:33-03:00  ⚠️ ALTERADO
+Producer                        : Microsoft® Word para Microsoft 365
+Title                          : Proposta Comercial - Contrato de Serviços
+Subject                        : Proposta para prestação de serviços de consultoria
+Author                         : João Silva Santos
+Keywords                       : consultoria, proposta, comercial
+Company                        : Tech Solutions Ltda
+
+========================================
+ANÁLISE COMPARATIVA
+========================================
+✓ Create Date: IGUAIS (2024:04:15 10:30:22-03:00)
+⚠️ Modify Date: DIFERENTES 
+   V1: 2024:04:15 10:30:22-03:00
+   V2: 2024:04:18 16:45:33-03:00
+⚠️ File Size: DIFERENTES
+   V1: 1.8 MB (1,847,392 bytes)
+   V2: 1.9 MB (1,923,744 bytes)
+   Diferença: +76,352 bytes (+4.1%)
+
+CONCLUSÃO: Documento V2 foi modificado 3 dias após criação original
