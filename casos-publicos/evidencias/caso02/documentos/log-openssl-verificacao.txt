@@ -1,0 +1,74 @@
+========================================
+VERIFICAÇÃO OPENSSL - ASSINATURAS DIGITAIS
+========================================
+
+=== ANÁLISE DOCUMENTO V1 ===
+$ openssl dgst -sha256 -verify pubkey.pem -signature signature_v1.sig proposta_comercial_v1.pdf
+
+Verified OK
+
+$ openssl pkcs7 -inform DER -in signature_v1.p7s -print_certs -text
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            5f:a2:b8:c4:d1:e7:f3:9a:2b:c5:e8:f1:d4:a7:b3:e2
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: CN=AC Certisign G8, OU=Autoridade Certificadora, O=Certisign Certificadora Digital S.A., C=BR
+        Validity
+            Not Before: Mar 15 12:00:00 2024 GMT
+            Not After : Mar 15 12:00:00 2025 GMT
+        Subject: CN=João Silva Santos:12345678901, O=Tech Solutions Ltda, C=BR
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                RSA Public-Key: (2048 bit)
+                Modulus:
+                    00:c2:a4:f5:b8:d1:e6:f7:a3:b2:c8:d4:e9:f1:a5:
+                    b6:c7:d2:e8:f3:a4:b5:c6:d7:e2:f8:a3:b4:c5:d6:
+                    [... certificado completo ...]
+                Exponent: 65537 (0x10001)
+
+Status da Assinatura V1: ✅ VÁLIDA E ÍNTEGRA
+Timestamp: 2024-04-15 13:30:22 UTC
+Hash do documento no momento da assinatura: 1a2b3c4d5e6f7890abcdef1234567890abcdef1234567890abcdef1234567890
+
+=== ANÁLISE DOCUMENTO V2 ===
+$ openssl dgst -sha256 -verify pubkey.pem -signature signature_v2.sig proposta_comercial_v2.pdf
+
+Verification Failure
+
+$ openssl pkcs7 -inform DER -in signature_v2.p7s -print_certs -text
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            5f:a2:b8:c4:d1:e7:f3:9a:2b:c5:e8:f1:d4:a7:b3:e2
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: CN=AC Certisign G8, OU=Autoridade Certificadora, O=Certisign Certificadora Digital S.A., C=BR
+        Validity
+            Not Before: Mar 15 12:00:00 2024 GMT
+            Not After : Mar 15 12:00:00 2025 GMT
+        Subject: CN=João Silva Santos:12345678901, O=Tech Solutions Ltda, C=BR
+
+Status da Assinatura V2: ❌ INVÁLIDA - DOCUMENTO MODIFICADO
+Hash do documento atual: 9876543210fedcba9876543210fedcba9876543210fedcba9876543210fedcba
+Hash esperado pela assinatura: 1a2b3c4d5e6f7890abcdef1234567890abcdef1234567890abcdef1234567890
+
+ERRO: Os hashes não coincidem - documento foi alterado após assinatura
+
+========================================
+VERIFICAÇÃO DE INTEGRIDADE ADICIONAL
+========================================
+
+$ openssl ts -verify -in timestamp_v1.tsr -data proposta_comercial_v1.pdf -CAfile ca-cert.pem
+Verification: OK
+
+$ openssl ts -verify -in timestamp_v1.tsr -data proposta_comercial_v2.pdf -CAfile ca-cert.pem
+Verification: FAILED
+TSA: Timestamp verification failed due to data mismatch
+
+CONCLUSÃO TÉCNICA:
+- Documento V1: Assinatura e timestamp válidos
+- Documento V2: Assinatura invalidada por modificação posterior
+- Certificado usado é válido e confiável
+- Modificação ocorreu após aplicação da assinatura
