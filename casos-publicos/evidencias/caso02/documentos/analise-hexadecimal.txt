@@ -1,0 +1,54 @@
+========================================
+ANÁLISE HEXADECIMAL - COMPARAÇÃO DE CONTEÚDO
+========================================
+
+=== EXTRAÇÃO DO CONTEÚDO DA PÁGINA 3 ===
+
+$ hexdump -C proposta_comercial_v1.pdf | grep -A5 -B5 "Valor total"
+001a340: 2056 616c 6f72 2074 6f74 616c 3a20 5224  Valor total: R$
+001a350: 2035 302e 3030 302c 3030 2f42 5420 2f45   50.000,00/BT /E
+001a360: 4d43 202f 5020 2d50 4443 2042 5420 3120 MC /P -PDC BT 1 
+001a370: 3020 3020 312e 3432 3820 3539 302e 3430  0 0 1.428 590.40
+
+$ hexdump -C proposta_comercial_v2.pdf | grep -A5 -B5 "Valor total"
+001a340: 2056 616c 6f72 2074 6f74 616c 3a20 5224  Valor total: R$
+001a350: 2038 352e 3030 302c 3030 2f42 5420 2f45   85.000,00/BT /E
+001a360: 4d43 202f 5020 2d50 4443 2042 5420 3120 MC /P -PDC BT 1 
+001a370: 3020 3020 312e 3432 3820 3539 302e 3430  0 0 1.428 590.40
+
+DIFERENÇA IDENTIFICADA:
+Offset 0x1A350:
+- V1: 35 30 2E 30 30 30 ("50.000")
+- V2: 38 35 2E 30 30 30 ("85.000")
+
+=== ANÁLISE DE OBJETOS PDF ===
+
+$ python3 analyze_pdf_objects.py proposta_comercial_v1.pdf
+Objeto 247 (Página 3, Conteúdo):
+Stream Length: 2847 bytes
+Content: /P <</MCID 15>> BDC BT /F1 12 Tf 72 650 Td (Valor total: R$ 50.000,00) Tj ET EMC
+
+$ python3 analyze_pdf_objects.py proposta_comercial_v2.pdf
+Objeto 247 (Página 3, Conteúdo):
+Stream Length: 2847 bytes
+Content: /P <</MCID 15>> BDC BT /F1 12 Tf 72 650 Td (Valor total: R$ 85.000,00) Tj ET EMC
+
+NOVOS OBJETOS NO V2:
+- Objeto 315: Incremento de modificação
+- Objeto 316: Nova tabela de referência cruzada
+- Objeto 317: Novo stream de conteúdo
+- Objeto 318: Metadados de modificação
+
+=== ESTRUTURA DE MODIFICAÇÃO ===
+V2 contém seção incremental:
+xref
+315 4
+0000123456 00000 n 
+0000123678 00000 n 
+0000123890 00000 n 
+0000124012 00000 n 
+trailer
+<</Size 319/Root 1 0 R/Info 318 0 R/Prev 98745/ID[<f3e2a1b9c8d7e6f5a4b3c2d1e0f9e8d7><a9b8c7d6e5f4a3b2c1d0e9f8e7d6c5b4>]>>
+
+CONCLUSÃO:
+Documento V2 possui estrutura incremental indicando modificação posterior
