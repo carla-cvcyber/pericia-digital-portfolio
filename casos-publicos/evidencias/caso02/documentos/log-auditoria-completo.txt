@@ -1,0 +1,86 @@
+========================================
+LOG DE AUDITORIA FORENSE
+========================================
+
+CASO: 02 - Detecção de Edição Posterior
+PERITO: Dr. Análise Forense Digital
+DATA: 2024-04-22
+HORA INÍCIO: 09:00:00 UTC-3
+
+[09:00:00] INÍCIO DA ANÁLISE
+[09:00:15] Recebimento dos arquivos:
+           - proposta_comercial_v1.pdf (1.847.392 bytes)
+           - proposta_comercial_v2.pdf (1.923.744 bytes)
+
+[09:01:00] VERIFICAÇÃO DE INTEGRIDADE DOS ARQUIVOS
+[09:01:15] MD5 V1: f3e2a1b9c8d7e6f5a4b3c2d1e0f9e8d7 ✓
+[09:01:20] MD5 V2: a9b8c7d6e5f4a3b2c1d0e9f8e7d6c5b4 ✓
+[09:01:25] STATUS: Arquivos íntegros para análise
+
+[09:02:00] EXTRAÇÃO DE METADADOS
+[09:02:30] ExifTool executado em ambos os arquivos
+[09:02:45] ACHADO: ModDate diferente entre versões
+           V1: 2024-04-15 10:30:22
+           V2: 2024-04-18 16:45:33
+[09:03:00] SUSPEITA: Possível modificação posterior
+
+[09:05:00] ANÁLISE DE ASSINATURA DIGITAL
+[09:05:30] OpenSSL: Verificação de assinatura V1
+[09:05:45] RESULTADO: Assinatura V1 VÁLIDA ✓
+[09:06:00] OpenSSL: Verificação de assinatura V2
+[09:06:15] RESULTADO: Assinatura V2 INVÁLIDA ❌
+[09:06:30] CONFIRMAÇÃO: Documento V2 modificado após assinatura
+
+[09:08:00] ANÁLISE ESTRUTURAL PDF
+[09:08:30] PDFtk: Extração de estrutura interna
+[09:09:00] IDENTIFICAÇÃO: Novos objetos em V2 (315-318)
+[09:09:15] CONFIRMAÇÃO: Estrutura incremental detectada
+
+[09:12:00] ANÁLISE HEXADECIMAL
+[09:12:30] HexDump: Comparação byte-a-byte
+[09:13:00] LOCALIZAÇÃO: Diferença no offset 0x1A350
+[09:13:15] DECODIFICAÇÃO: "50.000" → "85.000"
+[09:13:30] CONFIRMAÇÃO: Alteração no valor comercial
+
+[09:15:00] ANÁLISE VISUAL
+[09:15:30] Comparação de páginas renderizadas
+[09:16:00] IDENTIFICAÇÃO: Página 3, linha do valor total
+[09:16:15] MEDIÇÃO: 124 pixels diferentes
+[09:16:30] CONFIRMAÇÃO: Alteração visualmente detectável
+
+[09:20:00] ANÁLISE DE TIMELINE
+[09:20:30] Reconstrução cronológica dos eventos
+[09:21:00] JANELA TEMPORAL: 15/04 10:30 até 18/04 16:45
+[09:21:15] PERÍODO CRÍTICO: 3 dias, 6h15min
+[09:21:30] CONCLUSÃO: Modificação intencional identificada
+
+[09:25:00] VERIFICAÇÃO ADOBE ACROBAT
+[09:25:30] Validação oficial da assinatura
+[09:26:00] RESULTADO V1: Documento íntegro ✓
+[09:26:15] RESULTADO V2: Modificado após assinatura ❌
+[09:26:30] STATUS: Invalidade jurídica confirmada
+
+[09:30:00] COMPILAÇÃO DE EVIDÊNCIAS
+[09:30:30] Organização de todos os achados
+[09:31:00] Preparação de relatório técnico
+[09:31:30] Documentação de procedimentos
+
+[09:35:00] CONCLUSÃO DA ANÁLISE
+[09:35:15] VEREDICTO: Alteração posterior CONFIRMADA
+[09:35:30] GRAU DE CERTEZA: 100%
+[09:35:45] IMPACTO JURÍDICO: Documento V2 inválido
+[09:36:00] FIM DA ANÁLISE
+
+========================================
+RESUMO EXECUTIVO DO LOG
+========================================
+
+TEMPO TOTAL DE ANÁLISE: 36 minutos
+FERRAMENTAS UTILIZADAS: 7 (ExifTool, OpenSSL, PDFtk, HexDump, Adobe, Compare, Tesseract)
+EVIDÊNCIAS COLETADAS: 15 arquivos de prova
+ACHADOS CRÍTICOS: 5 (Metadados, Assinatura, Estrutura, Conteúdo, Visual)
+
+STATUS FINAL: CASO RESOLVIDO ✓
+ALTERAÇÃO CONFIRMADA: SIM ✓
+DOCUMENTO VÁLIDO: V1 apenas ✓
+RECOMENDAÇÃO: Rejeitar V2 por adulteração ✓
