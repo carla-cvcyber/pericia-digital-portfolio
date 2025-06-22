@@ -1,0 +1,59 @@
+========================================
+RECONSTRUÇÃO FORENSE DA TIMELINE
+========================================
+
+=== ANÁLISE DE METADADOS DETALHADA ===
+
+DOCUMENTO V1:
+  CreationDate:    2024-04-15T10:30:22-03:00
+  ModificationDate: 2024-04-15T10:30:22-03:00
+  AccessDate:      2024-04-22T09:15:33-03:00
+  
+DOCUMENTO V2:
+  CreationDate:    2024-04-15T10:30:22-03:00  (mantido)
+  ModificationDate: 2024-04-18T16:45:33-03:00  (alterado)
+  AccessDate:      2024-04-22T09:15:45-03:00
+
+=== ANÁLISE DO FILESYSTEM ===
+$ stat proposta_comercial_v1.pdf
+  File: proposta_comercial_v1.pdf
+  Size: 1847392    Blocks: 3616      IO Block: 4096   regular file
+Device: 8,1    Inode: 2097234    Links: 1
+Access: (644/-rw-r--r--)  Uid: (1000/forensic)   Gid: (1000/forensic)
+Access: 2024-04-22 09:15:33.847392847 -0300
+Modify: 2024-04-15 10:30:22.000000000 -0300
+Change: 2024-04-15 10:30:22.000000000 -0300
+ Birth: 2024-04-15 10:30:22.000000000 -0300
+
+$ stat proposta_comercial_v2.pdf
+  File: proposta_comercial_v2.pdf
+  Size: 1923744    Blocks: 3760      IO Block: 4096   regular file
+Device: 8,1    Inode: 2097235    Links: 1
+Access: (644/-rw-r--r--)  Uid: (1000/forensic)   Gid: (1000/forensic)
+Access: 2024-04-22 09:15:45.847392847 -0300
+Modify: 2024-04-18 16:45:33.000000000 -0300
+Change: 2024-04-18 16:45:33.000000000 -0300
+ Birth: 2024-04-18 16:45:33.000000000 -0300
+
+=== RECONSTRUÇÃO DOS EVENTOS ===
+
+2024-04-15 10:30:22 - EVENTO INICIAL
+  ✓ Criação do documento original
+  ✓ Aplicação da assinatura digital
+  ✓ Geração de timestamp confiável
+  ✓ Documento V1 finalizado e íntegro
+
+2024-04-18 16:45:33 - EVENTO DE MODIFICAÇÃO
+  ⚠️ Abertura do documento para edição
+  ⚠️ Alteração do valor: R$ 50.000,00 → R$ 85.000,00
+  ⚠️ Salvamento como nova versão (V2)
+  ⚠️ Assinatura automaticamente invalidada
+  ⚠️ Metadados de modificação atualizados
+
+2024-04-22 09:15:xx - ANÁLISE FORENSE
+  🔍 Descoberta da discrepância
+  🔍 Início da investigação técnica
+  🔍 Coleta das evidências digitais
+
+JANELA TEMPORAL DA ALTERAÇÃO: 3 dias, 6 horas e 15 minutos
+PERÍODO CRÍTICO: Entre 15/04 às 10:30 e 18/04 às 16:45
