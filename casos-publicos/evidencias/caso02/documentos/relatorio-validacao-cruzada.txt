@@ -1,0 +1,61 @@
+========================================
+VALIDAÇÃO CRUZADA DE EVIDÊNCIAS
+========================================
+
+=== METODOLOGIA DE VALIDAÇÃO ===
+Cada achado foi confirmado por pelo menos 2 ferramentas independentes:
+
+ACHADO 1: Documento foi modificado
+✓ Confirmado por: ExifTool (ModDate diferente)
+✓ Confirmado por: OpenSSL (Hash diferente)  
+✓ Confirmado por: Adobe Acrobat (Assinatura inválida)
+✓ Confirmado por: Análise hexadecimal (Bytes alterados)
+STATUS: CONFIRMADO POR 4 FONTES INDEPENDENTES
+
+ACHADO 2: Alteração ocorreu em 18/04/2024 às 16:45
+✓ Confirmado por: Metadados PDF (ModDate)
+✓ Confirmado por: Sistema de arquivos (mtime)
+✓ Confirmado por: Logs internos do PDF
+STATUS: CONFIRMADO POR 3 FONTES INDEPENDENTES
+
+ACHADO 3: Valor alterado de R$ 50.000 para R$ 85.000
+✓ Confirmado por: Análise visual comparativa
+✓ Confirmado por: Análise hexadecimal
+✓ Confirmado por: OCR diferencial
+✓ Confirmado por: Extração de texto PDF
+STATUS: CONFIRMADO POR 4 FONTES INDEPENDENTES
+
+ACHADO 4: Assinatura original era válida
+✓ Confirmado por: OpenSSL
+✓ Confirmado por: Adobe Acrobat
+✓ Confirmado por: Verificação de timestamp
+STATUS: CONFIRMADO POR 3 FONTES INDEPENDENTES
+
+ACHADO 5: Documento V2 é juridicamente inválido
+✓ Confirmado por: Invalidação da assinatura digital
+✓ Confirmado por: Quebra de integridade criptográfica
+✓ Confirmado por: Normas MP 2.200-2/2001
+STATUS: CONFIRMADO POR CRITÉRIOS TÉCNICOS E LEGAIS
+
+=== GRAU DE CONFIANÇA ===
+Alteração detectada: 100%
+Localização da alteração: 100%
+Período da alteração: 100%
+Impacto na validade: 100%
+Intencionalidade: 95% (baseado em evidências técnicas)
+
+=== LIMITAÇÕES DO ESTUDO ===
+1. Não identificação do autor da modificação
+2. Não identificação da ferramenta específica usada
+3. Análise limitada aos arquivos fornecidos
+4. Sem acesso aos logs de sistema originais
+5. Sem análise de rede ou tráfego
+
+=== VALIDAÇÃO FINAL ===
+Todas as evidências convergem para a mesma conclusão:
+O documento proposta_comercial_v2.pdf foi alterado após a 
+aplicação da assinatura digital, comprometendo sua integridade 
+e validade jurídica.
+
+RECOMENDAÇÃO: Aceitar apenas proposta_comercial_v1.pdf como 
+documento válido e legítimo.
