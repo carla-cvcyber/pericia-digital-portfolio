@@ -1,14 +1,11 @@
-# Configuração do Site Jekyll - Portfólio Perícia Digital
 title: "Portfólio Perícia Digital"
 description: "Portfólio profissional especializado em perícia digital, autenticidade de documentos e análise forense."
 author: Carla Vieira
 email: carla@cvcyber.dev
 
-# URL do site 
 url: "https://pericia.cvcyber.dev"
-baseurl: "/pericia-digital-portfolio"
+baseurl: ""
 
-# Configurações Jekyll
 markdown: kramdown
 highlighter: rouge
 theme: minima
@@ -17,47 +14,33 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
-# Configurações de coleções
 collections:
   casos:
     output: true
     permalink: /:collection/:name/
 
-# Configurações padrão
 defaults:
   - scope:
       path: ""
       type: "casos"
     values:
       layout: "caso"
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
 
-# Configurações de build
 safe: true
 incremental: false
-highlighter: rouge
-gist:
-  noscript: false
 
-# Metadados profissionais
 professional:
   name: Carla Vieira
   title: "Perito em Forense Digital"
   contact:
     phone: "+55 (61) 991688071"
-    linkedin: www.linkedin.com/in/carlacovieira
+    linkedin: "https://www.linkedin.com/in/carlacovieira"
     location: Brasília, DF
 
-# Configurações de SEO
 social:
   name: Carla Vieira
   type: "Person"
 
-# Excluir do build
 exclude:
   - Gemfile
   - Gemfile.lock
