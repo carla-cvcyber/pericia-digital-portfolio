@@ -15,6 +15,10 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
 
+# Force theme assets
+minima:
+  skin: auto
+
 # Exclude from processing
 exclude:
   - Gemfile
