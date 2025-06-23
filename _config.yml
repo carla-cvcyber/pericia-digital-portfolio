@@ -1,14 +1,44 @@
-title: "Portfólio Perícia Digital"
-description: "Especialista em documentoscopia digital e análise forense"
-baseurl: ""
-url: "https://pericia.cvcyber.dev"
+# Site settings
+title: "Carla Vieira | Perícia Digital Especializada"
+description: "Análise forense de documentos eletrônicos, verificação de autenticidade e detecção de alterações posteriores com metodologia científica rigorosa."
+author: "Carla Vieira"
+email: "carla@cvcyber.dev"
+phone: "+55 (61) 99168-8071"
+linkedin: "https://www.linkedin.com/in/carlacovieira"
 
-# Comment out theme for now - didn't work
+# Build settings
+markdown: kramdown
+highlighter: rouge
 theme: minima
-
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+  - jekyll-seo-tag
 
-markdown: kramdown
-highlighter: rouge
+# Force theme assets
+minima:
+  skin: auto
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+# Collections
+collections:
+  cases:
+    output: true
+    permalink: /:collection/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "cases"
+    values:
+      layout: "case"
