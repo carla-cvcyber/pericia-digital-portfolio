@@ -56,11 +56,10 @@ O documento em questão foi assinado digitalmente por ambas as partes, porém um
 ### 3.1 Comparação de Estrutura dos Arquivos
 
 #### Análise de Tamanhos
-```
+
 proposta_comercial_v1.pdf: 1.847.392 bytes
 proposta_comercial_v2.pdf: 1.923.744 bytes
 Diferença: +76.352 bytes (+4.1%)
-```
 
 #### Hashes de Verificação
 ```bash
@@ -71,92 +70,60 @@ SHA-256: 1a2b3c4d5e6f7890abcdef1234567890abcdef1234567890abcdef1234567890
 # Arquivo V2  
 MD5: a9b8c7d6e5f4a3b2c1d0e9f8e7d6c5b4
 SHA-256: 9876543210fedcba9876543210fedcba9876543210fedcba9876543210fedcba
-```
 
-**Resultado:** Hashes completamente diferentes confirmam alterações significativas.
-
-### 3.2 Análise de Metadados
-
-#### Propriedades do Documento V1
-```
+Resultado: Hashes completamente diferentes confirmam alterações significativas.
+3.2 Análise de Metadados
+Propriedades do Documento V1
 Creator: Microsoft Word
 Producer: Microsoft Print to PDF
 CreationDate: 2024-04-15 10:30:22 UTC-3
 ModDate: 2024-04-15 10:30:22 UTC-3
-```
 
-#### Propriedades do Documento V2
-```
+Propriedades do Documento V2
 Creator: Microsoft Word
 Producer: Microsoft Print to PDF
 CreationDate: 2024-04-15 10:30:22 UTC-3
 ModDate: 2024-04-18 16:45:33 UTC-3
-```
 
-**Achado Crítico:** Data de modificação posterior em 3 dias, indicando edição após criação original.
-
-### 3.3 Análise da Assinatura Digital
-
-#### Status da Assinatura no V1
-- ✅ Assinatura válida e íntegra
-- ✅ Certificado válido no momento da assinatura
-- ✅ Documento não modificado após assinatura
-
-#### Status da Assinatura no V2
-- ❌ **Assinatura INVÁLIDA**
-- ❌ Mensagem: "O documento foi modificado após a assinatura"
-- ❌ Integridade comprometida
-
-### 3.4 Análise Estrutural do PDF
-
-#### Estrutura Interna - Comparação
-```bash
+Achado Crítico: Data de modificação posterior em 3 dias, indicando edição após criação original.
+3.3 Análise da Assinatura Digital
+Status da Assinatura no V1
+ * ✅ Assinatura válida e íntegra
+ * ✅ Certificado válido no momento da assinatura
+ * ✅ Documento não modificado após assinatura
+Status da Assinatura no V2
+ * ❌ Assinatura INVÁLIDA
+ * ❌ Mensagem: "O documento foi modificado após a assinatura"
+ * ❌ Integridade comprometida
+3.4 Análise Estrutural do PDF
+Estrutura Interna - Comparação
 # Análise PDFtk - Versão 1
 pdftk proposta_v1.pdf dump_data output v1_metadata.txt
 
 # Análise PDFtk - Versão 2  
 pdftk proposta_v2.pdf dump_data output v2_metadata.txt
-```
 
-**Descobertas:**
-- V2 possui objetos PDF adicionais (incrementos 15-18)
-- Novos streams de conteúdo inseridos
-- Referências cruzadas modificadas
-
-### 3.5 Análise do Conteúdo Alterado
-
-#### Localização da Alteração
+Descobertas:
+ * V2 possui objetos PDF adicionais (incrementos 15-18)
+ * Novos streams de conteúdo inseridos
+ * Referências cruzadas modificadas
+3.5 Análise do Conteúdo Alterado
+Localização da Alteração
 Usando análise comparativa, identificou-se:
-
-**Página 3, Seção "Valores Comerciais":**
-- **V1:** "Valor total: R$ 50.000,00"
-- **V2:** "Valor total: R$ 85.000,00"
-
-#### Evidência Técnica
-- Objeto PDF 247 (página 3) foi modificado
-- Stream de conteúdo alterado com novo valor
-- Fonte e formatação mantidas para disfarçar alteração
-
----
-
-## 4. Evidências Coletadas
-
-### 4.1 Análise Visual Comparativa
-
-![Comparação de Valores](evidencias/prints/caso02_comparacao_valores.png)
-*Comparação lado a lado mostrando alteração no valor*
-
-### 4.2 Análise de Integridade
-
-![Status Assinatura V1](evidencias/prints/caso02_assinatura_v1_valida.png)
-*Documento V1 com assinatura válida*
-
-![Status Assinatura V2](evidencias/prints/caso02_assinatura_v2_invalida.png)
-*Documento V2 com assinatura comprometida*
-
-### 4.3 Análise de Metadados
-
-```
+Página 3, Seção "Valores Comerciais":
+ * V1: "Valor total: R$ 50.000,00"
+ * V2: "Valor total: R$ 85.000,00"
+Evidência Técnica
+ * Objeto PDF 247 (página 3) foi modificado
+ * Stream de conteúdo alterado com novo valor
+ * Fonte e formatação mantidas para disfarçar alteração
+4. Evidências Coletadas
+4.1 Análise Visual Comparativa
+Comparação lado a lado mostrando alteração no valor
+4.2 Análise de Integridade
+Documento V1 com assinatura válida
+Documento V2 com assinatura comprometida
+4.3 Análise de Metadados
 === Comparação de Metadados ===
 
 Propriedade        | Versão 1           | Versão 2
@@ -166,26 +133,16 @@ ModDate            | 2024-04-15 10:30   | 2024-04-18 16:45  ⚠️
 Pages              | 5                  | 5
 Size               | 1.8 MB             | 1.9 MB            ⚠️
 Producer           | MS Print to PDF    | MS Print to PDF
-```
 
-### 4.4 Análise Hexadecimal
-
+4.4 Análise Hexadecimal
 Comparação dos bytes nas posições onde ocorreu a alteração:
-
-```
 Offset   | V1 (Original)      | V2 (Modificado)
 ---------|-------------------|------------------
 0x1A350  | 35 30 2E 30 30   | 38 35 2E 30 30
          | "50.00"           | "85.00"          ⚠️
-```
 
----
-
-## 5. Cronologia dos Eventos
-
-### Timeline Reconstituída
-
-```mermaid
+5. Cronologia dos Eventos
+Timeline Reconstituída
 timeline
     title Cronologia da Alteração
     
@@ -197,121 +154,89 @@ timeline
                 : Valor modificado de R$ 50k para R$ 85k
                 : Geração do documento V2
                 : Assinatura invalidada
-```
 
-### Evidências Temporais
-- **15/04/2024 10:30** - Criação e assinatura original
-- **18/04/2024 16:45** - Modificação detectada nos metadados
-- **22/04/2024** - Data da análise pericial
-
----
-
-## 6. Análise dos Resultados
-
-### 6.1 Confirmação de Adulteração
-
-**Evidências Conclusivas:**
-1. **Hashes Diferentes:** Confirmam alteração do conteúdo
-2. **Metadados Alterados:** ModDate posterior à criação
-3. **Assinatura Inválida:** Sistema detecta comprometimento
-4. **Análise Estrutural:** Novos objetos PDF inseridos
-5. **Comparação Visual:** Valor claramente modificado
-
-### 6.2 Método de Alteração
-
-**Técnica Identificada:**
-- Edição direta do conteúdo PDF
-- Modificação do stream do objeto de texto
-- Tentativa de manter aparência original
-- Não houve reaplicação de assinatura
-
-### 6.3 Impacto na Validade Jurídica
-
-**Consequências:**
-- Documento V2 não possui validade jurídica
-- Assinatura digital invalidada pela alteração
-- Versão V1 permanece íntegra e válida
-- Evidência clara de má-fé na alteração
-
----
-
-## 7. Conclusões Técnicas
-
-### Principais Achados
-
-1. **Alteração Confirmada:** O documento foi inequivocamente modificado após a assinatura digital
-2. **Método Identificado:** Edição direta do conteúdo com alteração do valor comercial
-3. **Invalidação da Assinatura:** A modificação tornou a assinatura digital inválida
-4. **Preservação do Original:** A versão V1 mantém integridade e validade
-
-### Grau de Certeza
-- **Alteração detectada:** 100% de certeza
-- **Local da alteração:** Página 3, campo "Valor total"
-- **Período da alteração:** Entre 15/04 e 18/04/2024
-- **Impacto jurídico:** Invalidade completa do documento V2
-
-### Limitações
-- Análise baseada nos arquivos fornecidos
-- Não foi possível identificar o autor da alteração
-- Não se pode determinar a ferramenta específica utilizada
-- Análise não inclui aspectos de autoria da modificação
-
----
-
-## 8. Recomendações
-
-### Para Prevenção Futura
-
-1. **Uso de Timestamps:**
-   - Aplicar carimbos de tempo confiáveis
-   - Utilizar autoridades de timestamp credenciadas
-   - Documentar momento exato da assinatura
-
-2. **Armazenamento Seguro:**
-   - Manter originais em repositório íntegro
-   - Usar sistemas com controle de versão
-   - Implementar logs de acesso e modificação
-
-3. **Verificação Contínua:**
-   - Validar assinaturas periodicamente
-   - Monitorar integridade dos documentos
-   - Manter backups seguros e verificáveis
-
-### Para o Caso Específico
-
-1. **Documento V1:** Aceitar como válido e íntegro
-2. **Documento V2:** Rejeitar por alteração posterior
-3. **Processo Legal:** Considerar implicações de má-fé
-4. **Auditoria:** Investigar outros documentos do mesmo processo
-
----
-
-## 9. Anexos Técnicos
-
-### Documentação Completa
-- [Relatório PDFtk - V1](evidencias/documentos/caso02_pdftk_v1.txt)
-- [Relatório PDFtk - V2](evidencias/documentos/caso02_pdftk_v2.txt)
-- [Análise ExifTool Comparativa](evidencias/documentos/caso02_exiftool_comparison.txt)
-- [Log OpenSSL - Verificação](evidencias/documentos/caso02_openssl_verification.log)
-
-### Evidências Visuais
-- [Comparação Visual dos Documentos](evidencias/prints/caso02_visual_comparison.png)
-- [Status das Assinaturas](evidencias/prints/caso02_signature_status.png)
-- [Análise de Metadados](evidencias/prints/caso02_metadata_analysis.png)
-
-### Referências Normativas
-- MP 2.200-2/2001 - Validade jurídica de documentos eletrônicos
-- ITI-T 08 - Padrões de assinatura digital
-- ISO 32000-1 - Especificação PDF
-
----
-
-## 10. Declaração Pericial
-
-Baseado na análise técnica realizada, **confirmo categoricamente** que o documento `proposta_comercial_v2.pdf` foi alterado após a aplicação da assinatura digital, comprometendo sua integridade e validade jurídica.
-
+Evidências Temporais
+ * 15/04/2024 10:30 - Criação e assinatura original
+ * 18/04/2024 16:45 - Modificação detectada nos metadados
+ * 22/04/2024 - Data da análise pericial
+6. Análise dos Resultados
+6.1 Confirmação de Adulteração
+Evidências Conclusivas:
+ * Hashes Diferentes: Confirmam alteração do conteúdo
+ * Metadados Alterados: ModDate posterior à criação
+ * Assinatura Inválida: Sistema detecta comprometimento
+ * Análise Estrutural: Novos objetos PDF inseridos
+ * Comparação Visual: Valor claramente modificado
+6.2 Método de Alteração
+Técnica Identificada:
+ * Edição direta do conteúdo PDF
+ * Modificação do stream do objeto de texto
+ * Tentativa de manter aparência original
+ * Não houve reaplicação de assinatura
+6.3 Impacto na Validade Jurídica
+Consequências:
+ * Documento V2 não possui validade jurídica
+ * Assinatura digital invalidada pela alteração
+ * Versão V1 permanece íntegra e válida
+ * Evidência clara de má-fé na alteração
+7. Conclusões Técnicas
+Principais Achados
+ * Alteração Confirmada: O documento foi inequivocamente modificado após a assinatura digital
+ * Método Identificado: Edição direta do conteúdo com alteração do valor comercial
+ * Invalidação da Assinatura: A modificação tornou a assinatura digital inválida
+ * Preservação do Original: A versão V1 mantém integridade e validade
+Grau de Certeza
+ * Alteração detectada: 100% de certeza
+ * Local da alteração: Página 3, campo "Valor total"
+ * Período da alteração: Entre 15/04 e 18/04/2024
+ * Impacto jurídico: Invalidade completa do documento V2
+Limitações
+ * Análise baseada nos arquivos fornecidos
+ * Não foi possível identificar o autor da alteração
+ * Não se pode determinar a ferramenta específica utilizada
+ * Análise não inclui aspectos de autoria da modificação
+8. Recomendações
+Para Prevenção Futura
+ * Uso de Timestamps:
+   * Aplicar carimbos de tempo confiáveis
+   * Utilizar autoridades de timestamp credenciadas
+   * Documentar momento exato da assinatura
+ * Armazenamento Seguro:
+   * Manter originais em repositório íntegro
+   * Usar sistemas com controle de versão
+   * Implementar logs de acesso e modificação
+ * Verificação Contínua:
+   * Validar assinaturas periodicamente
+   * Monitorar integridade dos documentos
+   * Manter backups seguros e verificáveis
+Para o Caso Específico
+ * Documento V1: Aceitar como válido e íntegro
+ * Documento V2: Rejeitar por alteração posterior
+ * Processo Legal: Considerar implicações de má-fé
+ * Auditoria: Investigar outros documentos do mesmo processo
+9. Anexos Técnicos
+Documentação Completa
+ * Análise ExifTool Comparativa
+ * Análise Hexadecimal
+ * Checklist de Conformidade
+ * Hashes
+ * Log de Auditoria Completo
+ * Log OpenSSL - Verificação
+ * Relatório PDFtk - V1
+ * Relatório PDFtk - V2
+ * Relatório de Validação Cruzada
+ * Script de Análise Python
+ * Timeline Forense
+Evidências Visuais
+ * Comparação Visual dos Documentos
+ * Status das Assinaturas
+ * Análise de Metadados
+Referências Normativas
+ * MP 2.200-2/2001 - Validade jurídica de documentos eletrônicos
+ * ITI-T 08 - Padrões de assinatura digital
+ * ISO 32000-1 - Especificação PDF
+10. Declaração Pericial
+Baseado na análise técnica realizada, confirmo categoricamente que o documento proposta_comercial_v2.pdf foi alterado após a aplicação da assinatura digital, comprometendo sua integridade e validade jurídica.
 A alteração foi realizada de forma dolosa, modificando especificamente o valor comercial de R$ 50.000,00 para R$ 85.000,00, invalidando completamente a assinatura digital e tornando o documento juridicamente inválido.
+Análise realizada conforme metodologia científica e normas técnicas aplicáveis. Todas as evidências foram preservadas e estão disponíveis para contraprova e auditoria independente.
 
----
-
-*Análise realizada conforme metodologia científica e normas técnicas aplicáveis. Todas as evidências foram preservadas e estão disponíveis para contraprova e auditoria independente.*
