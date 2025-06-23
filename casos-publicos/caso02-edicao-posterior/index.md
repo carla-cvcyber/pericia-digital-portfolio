@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: "Caso 02: Detecção de Edição Posterior"
 date: 2024-04-22
 category: "Integridade Documental"
