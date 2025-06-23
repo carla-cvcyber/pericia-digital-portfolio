@@ -1,3 +1,6 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 /* Reset básico */
 * {
     margin: 0;
@@ -25,7 +28,7 @@
 
 /* Tipografia */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Updated */
     line-height: 1.6;
     color: var(--text-primary);
     background-color: var(--light-bg);
@@ -434,6 +437,23 @@ a:hover {
     box-shadow: var(--shadow);
 }
 
+/* Button focus for accessibility - NEW */
+.btn:focus {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* Navigation button spacing and active state - NEW */
+nav a.btn {
+    margin-right: 1rem;
+}
+
+nav a.btn.active,
+nav a.btn:hover {
+    background: var(--primary-color);
+    box-shadow: var(--shadow);
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
     .container {
@@ -468,6 +488,13 @@ a:hover {
     th, td {
         padding: 0.5rem;
     }
+}
+
+/* Footer copyright styling - NEW */
+footer.contact p {
+    font-size: 0.85rem;
+    margin-top: 1rem;
+    color: var(--text-muted);
 }
 
 /* Impressão */
