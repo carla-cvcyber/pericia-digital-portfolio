@@ -1,46 +1,21 @@
-title: "Portfólio Perícia Digital"
-description: "Portfólio profissional especializado em perícia digital, autenticidade de documentos e análise forense."
-author: Carla Vieira
-email: carla@cvcyber.dev
+# Site settings
+title: "Carla Vieira | Perícia Digital Especializada"
+description: "Análise forense de documentos eletrônicos, verificação de autenticidade e detecção de alterações posteriores com metodologia científica rigorosa."
+author: "Carla Vieira"
+email: "carla@cvcyber.dev"
+phone: "+55 (61) 99168-8071"
+linkedin: "https://www.linkedin.com/in/carlacovieira"
 
-url: "https://pericia.cvcyber.dev"
-baseurl: ""
-
+# Build settings
 markdown: kramdown
 highlighter: rouge
 theme: minima
 plugins:
-  - jekyll-sitemap
   - jekyll-feed
+  - jekyll-sitemap
   - jekyll-seo-tag
 
-collections:
-  casos:
-    output: true
-    permalink: /:collection/:name/
-
-defaults:
-  - scope:
-      path: ""
-      type: "casos"
-    values:
-      layout: "caso"
-
-safe: true
-incremental: false
-
-professional:
-  name: Carla Vieira
-  title: "Perito em Forense Digital"
-  contact:
-    phone: "+55 (61) 991688071"
-    linkedin: "https://www.linkedin.com/in/carlacovieira"
-    location: Brasília, DF
-
-social:
-  name: Carla Vieira
-  type: "Person"
-
+# Exclude from processing
 exclude:
   - Gemfile
   - Gemfile.lock
@@ -49,4 +24,17 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
-  - README.md
+
+# Collections
+collections:
+  cases:
+    output: true
+    permalink: /:collection/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "cases"
+    values:
+      layout: "case"
