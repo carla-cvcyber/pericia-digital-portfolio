@@ -3,8 +3,8 @@ description: "Especialista em documentoscopia digital e análise forense"
 baseurl: ""
 url: "https://pericia.cvcyber.dev"
 
-# Comment out theme for now
-# theme: minima
+# Comment out theme for now - didn't work
+theme: minima
 
 plugins:
   - jekyll-feed
