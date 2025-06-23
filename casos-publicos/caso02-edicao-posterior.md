@@ -72,7 +72,8 @@ MD5: a9b8c7d6e5f4a3b2c1d0e9f8e7d6c5b4
 SHA-256: 9876543210fedcba9876543210fedcba9876543210fedcba9876543210fedcba
 
 Resultado: Hashes completamente diferentes confirmam alterações significativas.```
-3.2 Análise de Metadados
+
+#### 3.2 Análise de Metadados
 Propriedades do Documento V1
 Creator: Microsoft Word
 Producer: Microsoft Print to PDF
