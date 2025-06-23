@@ -15,7 +15,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
 
-# Force theme assets
+# Theme assets
 minima:
   skin: auto
 
@@ -28,17 +28,3 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
-
-# Collections
-collections:
-  cases:
-    output: true
-    permalink: /:collection/:name/
-
-# Defaults
-defaults:
-  - scope:
-      path: ""
-      type: "cases"
-    values:
-      layout: "case"
