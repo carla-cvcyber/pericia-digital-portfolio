@@ -469,3 +469,116 @@ body {
     z-index: 1001;
     transition: width 0.1s ease;
 }
+/* --- Markdown content styling for headings, paragraphs, tables, code, etc. --- */
+h1, h2, h3, h4, h5, h6 {
+    color: white;
+    font-weight: 700;
+    margin-top: 2.5rem;
+    margin-bottom: 1.2rem;
+    line-height: 1.2;
+}
+
+h1 { font-size: 2.5rem; border-bottom: 2px solid #222; padding-bottom: .5rem; }
+h2 { font-size: 2rem; border-bottom: 1px solid #222; padding-bottom: .3rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.2rem; }
+h5, h6 { font-size: 1rem; }
+
+p {
+    color: rgba(255,255,255,0.90);
+    margin-bottom: 1.2rem;
+    font-size: 1.10rem;
+    line-height: 1.7;
+}
+
+ul, ol {
+    color: rgba(255,255,255,0.88);
+    margin: 1.2em 0 1.2em 2.5em;
+    font-size: 1.06rem;
+}
+
+li {
+    margin-bottom: .5em;
+    line-height: 1.5;
+}
+
+pre, code {
+    background: #181818;
+    color: #00ff88;
+    border-radius: 6px;
+    padding: 0.25em 0.6em;
+    font-family: 'Fira Mono', 'Consolas', 'Monaco', monospace;
+    font-size: 1em;
+}
+
+pre {
+    padding: 1em;
+    overflow-x: auto;
+    margin-bottom: 1.5em;
+}
+
+code {
+    font-size: 1em;
+    padding: 0.2em 0.5em;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0 2.5rem 0;
+    color: #fff;
+    background: rgba(255,255,255,0.03);
+    font-size: 1.05rem;
+}
+
+th, td {
+    border: 1px solid #333;
+    padding: 0.8em 1em;
+}
+
+th {
+    background: #222;
+    font-weight: 700;
+    color: #00ff88;
+}
+
+tr:nth-child(even) {
+    background: #181818;
+}
+
+blockquote {
+    border-left: 4px solid #00ff88;
+    background: rgba(0,255,136,0.07);
+    color: #bfffcf;
+    padding: 0.7em 1.5em;
+    margin: 1.5em 0;
+    font-style: italic;
+    border-radius: 5px;
+}
+
+hr {
+    border: none;
+    border-top: 2px solid #222;
+    margin: 2em 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    margin: 1.5em auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 24px rgba(0,255,136,0.10);
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.6rem; }
+    h3 { font-size: 1.2rem; }
+    table, th, td { font-size: 0.98rem; }
+    pre, code { font-size: 0.98rem; }
+}
+
+@media (max-width: 480px) {
+    h1 { font-size: 1.35rem; }
+    h2 { font-size: 1.1rem; }
+}
