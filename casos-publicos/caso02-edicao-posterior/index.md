@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "Caso 02: Detecção de Edição Posterior"
+permalink: /casos-publicos/caso02-edicao-posterior/
 date: 2024-04-22
 category: "Integridade Documental"
 tags: ["Adulteração", "PDF", "Análise Forense"]
