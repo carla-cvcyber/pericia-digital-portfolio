@@ -251,17 +251,17 @@ Consequências:
 
 ### Anexos Técnicos
 
-- [análise ExifTool comparativa](../../evidencias/caso02/documentos/analise-exiftool-comparativa.txt)
-- [análise hexadecimal](../../evidencias/caso02/documentos/analise-hexadecimal.txt)
-- [checklist de conformidade](../../evidencias/caso02/documentos/checklist-conformidade.txt)
-- [hashes](../../evidencias/caso02/documentos/hashes.txt)
-- [log de auditoria completo](../../evidencias/caso02/documentos/log-auditoria-completo.txt)
-- [log openssl verificação](../../evidencias/caso02/documentos/log-openssl-verificacao.txt)
-- [relatório PDFtk v1](../../evidencias/caso02/documentos/relatorio-pdftk-v1.txt)
-- [relatório PDFtk v2](../../evidencias/caso02/documentos/relatorio-pdftk-v2.txt)
-- [relatório de validação cruzada](../../evidencias/caso02/documentos/relatorio-validacao-cruzada.txt)
-- [script de análise Python](../../evidencias/caso02/documentos/script-analise-python.py)
-- [timeline forense](../../evidencias/caso02/documentos/timeline-forense.txt)
+- [análise ExifTool comparativa](/casos-publicos/evidencias/caso02/documentos/analise-exiftool-comparativa.txt)
+- [análise hexadecimal](/casos-publicos/evidencias/caso02/documentos/analise-hexadecimal.txt)
+- [checklist de conformidade](/casos-publicos/evidencias/caso02/documentos/checklist-conformidade.txt)
+- [hashes](/casos-publicos/evidencias/caso02/documentos/hashes.txt)
+- [log de auditoria completo](/casos-publicos/evidencias/caso02/documentos/log-auditoria-completo.txt)
+- [log openssl verificação](/casos-publicos/evidencias/caso02/documentos/log-openssl-verificacao.txt)
+- [relatório PDFtk v1](/casos-publicos/evidencias/caso02/documentos/relatorio-pdftk-v1.txt)
+- [relatório PDFtk v2](/casos-publicos/evidencias/caso02/documentos/relatorio-pdftk-v2.txt)
+- [relatório de validação cruzada](/casos-publicos/evidencias/caso02/documentos/relatorio-validacao-cruzada.txt)
+- [script de análise Python](/casos-publicos/evidencias/caso02/documentos/script-analise-python.py)
+- [timeline forense](/casos-publicos/evidencias/caso02/documentos/timeline-forense.txt)
 
 **Evidências Visuais**
 - Comparação Visual dos Documentos
