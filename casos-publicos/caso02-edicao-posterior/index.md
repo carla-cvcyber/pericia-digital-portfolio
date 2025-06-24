@@ -249,18 +249,19 @@ Consequências:
 
 ## 9. Anexos Técnicos
 
-**Documentação Completa**
-- Análise ExifTool Comparativa
-- Análise Hexadecimal
-- Checklist de Conformidade
-- Hashes
-- Log de Auditoria Completo
-- Log OpenSSL - Verificação
-- Relatório PDFtk - V1
-- Relatório PDFtk - V2
-- Relatório de Validação Cruzada
-- Script de Análise Python
-- Timeline Forense
+### Anexos Técnicos
+
+- [análise ExifTool comparativa](../../evidencias/caso02/documentos/analise-exiftool-comparativa.txt)
+- [análise hexadecimal](../../evidencias/caso02/documentos/analise-hexadecimal.txt)
+- [checklist de conformidade](../../evidencias/caso02/documentos/checklist-conformidade.txt)
+- [hashes](../../evidencias/caso02/documentos/hashes.txt)
+- [log de auditoria completo](../../evidencias/caso02/documentos/log-auditoria-completo.txt)
+- [log openssl verificação](../../evidencias/caso02/documentos/log-openssl-verificacao.txt)
+- [relatório PDFtk v1](../../evidencias/caso02/documentos/relatorio-pdftk-v1.txt)
+- [relatório PDFtk v2](../../evidencias/caso02/documentos/relatorio-pdftk-v2.txt)
+- [relatório de validação cruzada](../../evidencias/caso02/documentos/relatorio-validacao-cruzada.txt)
+- [script de análise Python](../../evidencias/caso02/documentos/script-analise-python.py)
+- [timeline forense](../../evidencias/caso02/documentos/timeline-forense.txt)
 
 **Evidências Visuais**
 - Comparação Visual dos Documentos
