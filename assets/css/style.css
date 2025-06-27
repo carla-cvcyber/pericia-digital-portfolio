@@ -225,6 +225,18 @@ body {
     gap: 1.5rem;
 }
 
+.expertise-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
 .expertise-item {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
