@@ -591,3 +591,16 @@ img {
     h1 { font-size: 1.35rem; }
     h2 { font-size: 1.1rem; }
 }
+
+/* Melhora apenas a cor dos links, mantendo formatação existente */
+a {
+    color: #60A5FA !important; /* azul claro */
+}
+
+a:hover {
+    color: #93C5FD !important; /* azul mais claro no hover */
+}
+
+a:visited {
+    color: #A78BFA !important; /* roxo claro para links visitados */
+}
